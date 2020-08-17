@@ -15,3 +15,4 @@ This is me working through the [Go by Example tutorials](https://gobyexample.com
 1. [slices](slices.go)
 1. [maps](maps.go)
 1. [range](range.go)
+1. [functions](functions.go)
