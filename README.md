@@ -4,7 +4,8 @@ This is me working through the [Go by Example tutorials](https://gobyexample.com
 
 ## Tutorials
 
-- hello-world
-- [variables](variables.go)
-- [values](values.go)
-- [constants](constants.go)
+1. hello-world
+1. [variables](variables.go)
+1. [values](values.go)
+1. [constants](constants.go)
+1. [for loop](for.go)
