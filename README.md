@@ -10,3 +10,4 @@ This is me working through the [Go by Example tutorials](https://gobyexample.com
 1. [constants](constants.go)
 1. [for loop](for.go)
 1. [if/else](if.go)
+1. [switch](switch.go)
