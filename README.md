@@ -16,4 +16,5 @@ This is me working through the [Go by Example tutorials](https://gobyexample.com
 1. [maps](maps.go)
 1. [range](range.go)
 1. [functions](functions.go)
-1. [multi-return functions](013-multple-return-functions.go)
+1. [multi-return functions](013-multiple-return-functions.go)
+1. [variadic functions](014-variadic-functions)
