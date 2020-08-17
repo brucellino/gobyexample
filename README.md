@@ -11,3 +11,4 @@ This is me working through the [Go by Example tutorials](https://gobyexample.com
 1. [for loop](for.go)
 1. [if/else](if.go)
 1. [switch](switch.go)
+1. [arrays](arrays.go)
