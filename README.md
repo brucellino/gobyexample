@@ -12,3 +12,4 @@ This is me working through the [Go by Example tutorials](https://gobyexample.com
 1. [if/else](if.go)
 1. [switch](switch.go)
 1. [arrays](arrays.go)
+1. [slices](slices.go)
