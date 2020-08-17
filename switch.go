@@ -30,6 +30,16 @@ func main() {
 		fmt.Println("It's a weekday")
 	}
 
+	// NOTE:   Switch without an expression is another way of using if/else logic
+	//         We also how how case expressions can be non-constants -- time.Now()
+	t := time.Now()
+	switch {
+	case t.Hour() < 12:
+		fmt.Println("It's before noon")
+	default:
+		fmt.Println("It's after noon")
+	}
+
 	// NOTE:  a type switch compares types instead of values
 	//        use this to discover the type of an interface value
 	//        in this example, variable t will have the type corresponding
