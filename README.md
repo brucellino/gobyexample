@@ -23,3 +23,4 @@ This is me working through the [Go by Example tutorials](https://gobyexample.com
 1. [pointers](017-pointers.go)
 1. [structs](018-structs.go)
 1. [methods](019-methods.go)
+1. [interfaces](020-interfaces.go)
