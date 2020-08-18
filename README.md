@@ -21,3 +21,4 @@ This is me working through the [Go by Example tutorials](https://gobyexample.com
 1. [closures](015-closures.go)
 1. [recursion](016-recursion.go)
 1. [pointers](017-pointers.go)
+1. [structs](018-structs.go)
