@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.0.16](https://github.com/brucellino/gobyexample/tree/v0.0.16) (2020-08-18)
+
+[Full Changelog](https://github.com/brucellino/gobyexample/compare/v0.0.15...v0.0.16)
+
 ## [v0.0.15](https://github.com/brucellino/gobyexample/tree/v0.0.15) (2020-08-18)
 
 [Full Changelog](https://github.com/brucellino/gobyexample/compare/v0.0.14...v0.0.15)
