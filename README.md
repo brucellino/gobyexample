@@ -19,3 +19,4 @@ This is me working through the [Go by Example tutorials](https://gobyexample.com
 1. [multi-return functions](013-multiple-return-functions.go)
 1. [variadic functions](014-variadic-functions.go)
 1. [closures](015-closures.go)
+1. [recursion](016-recursion.go)
