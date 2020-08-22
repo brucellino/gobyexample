@@ -27,3 +27,4 @@ This is me working through the [Go by Example tutorials](https://gobyexample.com
 1. [errors](021-errors.go)
 1. [goroutines](022-goroutines.go)
 1. [channels](023-channels.go)
+1. [buffered channels](024-buffered-channels.go)
