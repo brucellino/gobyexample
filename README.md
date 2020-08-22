@@ -29,3 +29,4 @@ This is me working through the [Go by Example tutorials](https://gobyexample.com
 1. [channels](023-channels.go)
 1. [buffered channels](024-buffered-channels.go)
 1. [synchronisation](025-channel-synchronisation.go)
+1. [channel directions](026-channel-directions.go)
