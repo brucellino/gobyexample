@@ -38,3 +38,4 @@ This is me working through the [Go by Example tutorials](https://gobyexample.com
 1. [timers](032-timers.go)
 1. [tickers](033-tickers.go)
 1. [worker pools](034-worker-pools.go)
+1. [waitgroups](035-waitgroups.go)
