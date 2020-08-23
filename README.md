@@ -35,3 +35,4 @@ This is me working through the [Go by Example tutorials](https://gobyexample.com
 1. [nonblocking channels](029-nonblocking-channel.go)
 1. [closing channels](030-closing-channels.go)
 1. [range over channels](031-range-over-channels.go)
+1. [timers](032-timers.go)
