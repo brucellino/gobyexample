@@ -33,3 +33,4 @@ This is me working through the [Go by Example tutorials](https://gobyexample.com
 1. [select](027-select.go)
 1. [timeouts](028-timeouts.go)
 1. [nonblocking channels](029-nonblocking-channel.go)
+1. [closing channels](030-closing-channels.go)
