@@ -37,3 +37,4 @@ This is me working through the [Go by Example tutorials](https://gobyexample.com
 1. [range over channels](031-range-over-channels.go)
 1. [timers](032-timers.go)
 1. [tickers](033-tickers.go)
+1. [worker pools](034-worker-pools.go)
