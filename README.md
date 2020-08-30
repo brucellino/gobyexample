@@ -47,3 +47,4 @@ This is me working through the [Go by Example tutorials](https://gobyexample.com
 1. [sorting by functions](041-sorting-by-functions.go)
 1. [panic](042-panic.go)
 1. [defer](043-defer.go)
+1. [collection functions](044-collection-functions.go)
