@@ -1,0 +1,118 @@
+// NOTE: https://gobyexample.com/stateful-goroutines
+
+/*
+We can use explicit locking with mutexes to synchronise access to shared statef
+across multiple goroutines;
+another option is to use the built-in synchronisation features of goroutines
+and channels to achieve the same result.
+This channel-based approach aligns with Go's ideas of sharing memory by
+communicating and having each piece of data owned by exactly 1 goroutine.
+*/
+
+package main
+
+import (
+	"fmt"
+	"math/rand"
+	"sync/atomic"
+	"time"
+)
+
+/*
+In this example our state will be owned by a single goroutine.
+This will guarantee that the data is never corrupted with concurrent access.
+In oredr to read or write that state, other goroutines will send messages
+to the owning goroutine and receive corresponding replies.
+these readOp and writeOp structs encapsulate those requests and a way for the owning
+goroutine to respond
+*/
+
+type readOp struct {
+	key  int
+	resp chan int
+}
+
+type writeOp struct {
+	key  int
+	val  int
+	resp chan bool
+}
+
+func main() {
+	// NOTE: As before we'll count how many operations we perform.
+	var readOps uint64
+	var writeOps uint64
+
+	// NOTE: The reads and writes channels will be used by other goroutines to issue
+	// NOTE: read and write requests respectively.
+	reads := make(chan readOp)
+	writes := make(chan writeOp)
+
+	/*
+	  This goroutine owns the state which is a map as in the previous example, but now
+	  private to the stateful goroutine.
+	  This goroutine repeatedly selects on the reads and writes channels, responding to
+	  requests as they arrive.
+	  A response is executed by first performing the requested operation and then sending
+	  a value on the response channel resp to indicate success
+	  (and the desired value in the case of reads)
+	*/
+
+	go func() {
+		var state = make(map[int]int)
+		for {
+			select {
+			case read := <-reads:
+				read.resp <- state[read.key]
+			case write := <-writes:
+				state[write.key] = write.val
+				write.resp <- true
+			}
+		}
+	}()
+
+	/*
+	  This starts 100 goroutines to issue reads to the state-owning goroutine via the
+	  reads channel.
+	  Each read requires constructing a readOp, sending it over the reads channel and
+	  then receiving the result over the resp channel
+	*/
+
+	for r := 0; r < 100; r++ {
+		go func() {
+			for {
+				read := readOp{
+					key:  rand.Intn(5),
+					resp: make(chan int)}
+				reads <- read
+				<-read.resp
+				atomic.AddUint64(&readOps, 1)
+				time.Sleep(time.Millisecond)
+			}
+		}()
+	}
+
+	// NOTE: We start 10 writes as well, using a simila approach
+	for w := 0; w < 10; w++ {
+		go func() {
+			for {
+				write := writeOp{
+					key:  rand.Intn(5),
+					val:  rand.Intn(100),
+					resp: make(chan bool)}
+				writes <- write
+				<-write.resp
+				atomic.AddUint64(&writeOps, 1)
+				time.Sleep(time.Millisecond)
+			}
+		}()
+	}
+
+	// NOTE: Let the goroutines work for a second.
+	time.Sleep(time.Second)
+
+	readOpsFinal := atomic.LoadUint64(&readOps)
+	fmt.Println("readOps: ", readOpsFinal)
+	writeOpsFinal := atomic.LoadUint64(&writeOps)
+	fmt.Println("writeOps: ", writeOpsFinal)
+}
