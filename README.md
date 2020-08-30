@@ -43,3 +43,4 @@ This is me working through the [Go by Example tutorials](https://gobyexample.com
 1. [atomic counters](037-atomic-counters.go)
 1. [mutexes](038-mutexes.go)
 1. [stateful-goroutines](039-stateful-goroutines.go)
+1. [sorting](040-sorting.go)
