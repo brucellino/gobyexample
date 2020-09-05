@@ -49,3 +49,4 @@ This is me working through the [Go by Example tutorials](https://gobyexample.com
 1. [defer](043-defer.go)
 1. [collection functions](044-collection-functions.go)
 1. [string functions](045-string-functions.go)
+1. [string formatting](046-string-formatting.go)
